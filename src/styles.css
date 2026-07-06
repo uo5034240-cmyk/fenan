@@ -1,0 +1,134 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 16px);
+  --radius-4xl: calc(var(--radius) + 24px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ink: var(--ink);
+  --color-teal: var(--teal);
+  --color-mint: var(--mint);
+  --color-gold: var(--gold);
+  --color-cloud: var(--cloud);
+  --font-display: "Playfair Display", Georgia, serif;
+  --font-sans: "Poppins", system-ui, sans-serif;
+}
+
+:root {
+  --radius: 0.625rem;
+  /* Brand palette — locked to identity */
+  --ink: oklch(0.18 0.04 242);
+  --teal: oklch(0.58 0.112 196);
+  --mint: oklch(0.83 0.073 181);
+  --gold: oklch(0.73 0.122 87);
+  --cloud: oklch(0.965 0.006 240);
+  /* Semantic */
+  --background: oklch(0.982 0.004 230);
+  --foreground: var(--ink);
+  --card: oklch(1 0 0);
+  --card-foreground: var(--ink);
+  --popover: oklch(1 0 0);
+  --popover-foreground: var(--ink);
+  --primary: var(--teal);
+  --primary-foreground: oklch(1 0 0);
+  --secondary: var(--ink);
+  --secondary-foreground: oklch(1 0 0);
+  --muted: oklch(0.946 0.01 225);
+  --muted-foreground: oklch(0.46 0.024 240);
+  --accent: var(--gold);
+  --accent-foreground: var(--ink);
+  --destructive: oklch(0.577 0.245 27);
+  --border: oklch(0.9 0.012 225);
+  --input: oklch(0.9 0.012 225);
+  --ring: var(--teal);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+    box-sizing: border-box;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.025em;
+  }
+  /* Respect reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+/* ─── Gradient utilities ─────────────────────────── */
+
+@utility text-gradient-brand {
+  background-image: linear-gradient(135deg, var(--teal) 0%, var(--mint) 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+@utility bg-ink-gradient {
+  background-image: radial-gradient(
+    ellipse 120% 80% at 50% 0%,
+    oklch(0.24 0.052 235) 0%,
+    oklch(0.15 0.042 242) 45%,
+    oklch(0.11 0.032 242) 100%
+  );
+}
+
+@utility bg-teal-gradient {
+  background-image: linear-gradient(135deg, var(--teal) 0%, var(--mint) 100%);
+}
+
+/* ─── Scroll progress bar ────────────────────────── */
+
+@utility scroll-progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--teal), var(--mint));
+  transform-origin: left;
+  z-index: 100;
+  pointer-events: none;
+}
