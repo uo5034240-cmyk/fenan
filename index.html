@@ -1,14 +1,74 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Fenan Dental Clinic</title>
+    <meta
+      name="description"
+      content="Fenan Dental Clinic — a polished static placeholder for a modern dental practice in Addis Ababa."
+    />
+    <title>Fenan Dental Clinic — Static Placeholder</title>
+    <style>
+      :root {
+        color-scheme: dark;
+        font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif;
+      }
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        background: linear-gradient(135deg, #062a2b 0%, #0f4b4c 45%, #1f6f73 100%);
+        color: #f6fffe;
+      }
+      main {
+        width: min(92vw, 720px);
+        padding: 3rem;
+        border-radius: 24px;
+        background: rgba(7, 29, 31, 0.8);
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        box-shadow: 0 24px 60px rgba(0, 0, 0, 0.28);
+        backdrop-filter: blur(10px);
+      }
+      .eyebrow {
+        margin: 0 0 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.32em;
+        font-size: 0.76rem;
+        font-weight: 700;
+        color: #7fe3d8;
+      }
+      h1 {
+        margin: 0 0 1rem;
+        font-size: clamp(2rem, 4vw, 3rem);
+        line-height: 1.1;
+      }
+      p {
+        margin: 0;
+        font-size: 1.04rem;
+        line-height: 1.7;
+        color: rgba(246, 255, 254, 0.86);
+      }
+      .cta {
+        display: inline-block;
+        margin-top: 1.6rem;
+        padding: 0.8rem 1.2rem;
+        border-radius: 999px;
+        background: #7fe3d8;
+        color: #042526;
+        font-weight: 700;
+        text-decoration: none;
+      }
+    </style>
   </head>
   <body>
-    <div id="root">
-      <!-- Placeholder index.html. Run `npm run build` to generate the production site in the `dist/` folder. -->
-      <p>Fenan Dental Clinic — static placeholder. Run <code>npm run build</code>.</p>
-    </div>
+    <main>
+      <p class="eyebrow">Fenan Dental Clinic</p>
+      <h1>Healthy smiles, compassionate care.</h1>
+      <p>
+        This is a static placeholder page for Fenan Dental Clinic while the full experience is being prepared.
+      </p>
+      <a class="cta" href="mailto:hello@fenandentalclinic.com">Book a visit</a>
+    </main>
   </body>
 </html>
