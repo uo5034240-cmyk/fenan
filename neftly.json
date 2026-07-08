@@ -1,0 +1,22 @@
+{
+  "name": "Fenan Dental Clinic",
+  "version": "1.0.0",
+  "description": "Modern dental clinic website - Fenan Dental Clinic in Addis Ababa",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fenan-clinic/website"
+  },
+  "keywords": [
+    "dental",
+    "clinic",
+    "addis-ababa",
+    "dentistry",
+    "healthcare"
+  ],
+  "buildCommand": "bun install && bun run build",
+  "outputDirectory": "dist",
+  "nodeVersion": "20",
+  "buildEnvironment": {
+    "NODE_ENV": "production"
+  }
+}
