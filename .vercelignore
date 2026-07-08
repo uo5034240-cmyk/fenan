@@ -1,0 +1,32 @@
+# Keep this for compatibility with other platforms
+
+# Dependencies
+node_modules/
+bun.lock
+package-lock.json
+yarn.lock
+
+# Build outputs (local)
+.output/
+.nuxt/
+
+# Development
+.env.local
+.env.*.local
+.DS_Store
+*.log
+
+# IDE
+.vscode/
+.idea/
+
+# Git
+.gitignore
+
+# Source files
+src/
+eslint.config.js
+tsconfig.json
+vite.config.ts
+bunfig.toml
+components.json
